@@ -57,8 +57,13 @@ pip install -r requirements.txt
 
 1. Install uv (A fast Python package installer and resolver):
 
+For Linux or Mac:
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+ For Windows (According to ChatGPT):
+```bash
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
 2. Clone the repository:
