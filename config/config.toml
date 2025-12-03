@@ -7,6 +7,12 @@ max_tokens = 8192                          # Maximum number of tokens in the res
 temperature = 0.0                          # Controls randomness
 
 
+[daytona]
+daytona_api_key = "YOUR DAYTONA API KEY"
+
+
+
+
 # [llm] #OLLAMA:
 # api_type = 'ollama'
 # model = "llama3.2"
