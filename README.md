@@ -1,3 +1,24 @@
+# 👋 OpenManus
+
+> **Notes (Important Fork Information)**
+> This fork fixes two common issues users frequently face when working with Daytona and Pillow:
+>
+> **1. Incorrect Pillow Version**
+> The original repository lists Pillow as version **11.x**, which causes installation failures. The correct working version is **10.4.0**.
+>
+> **2. Daytona Configuration Problems**
+> Many users encounter Daytona-related errors. This fork resolves them by ensuring you can add your **Daytona API key** directly inside `config/config.toml` under the root directory.
+>
+> **Additional Known Issues**
+>
+> * "Module not found" errors for **Daytona** and **structlog** occur because they are *not* included in the original `requirements.txt` file.
+> * This fork **does NOT modify** the `requirements.txt` file. To fix these issues manually:
+>
+>   * Make sure Daytona is installed.
+>   * Install **structlog version 24.1.0**, which resolves the import errors.
+>
+> These notes are placed here to save you time and frustration before you start installation.
+
 <p align="center">
   <img src="assets/logo.jpg" width="200"/>
 </p>
@@ -5,8 +26,8 @@
 English | [中文](README_zh.md) | [한국어](README_ko.md) | [日本語](README_ja.md)
 
 [![GitHub stars](https://img.shields.io/github/stars/FoundationAgents/OpenManus?style=social)](https://github.com/FoundationAgents/OpenManus/stargazers)
-&ensp;
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) &ensp;
+ 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
 [![Discord Follow](https://dcbadge.vercel.app/api/server/DYn29wFk9z?style=flat)](https://discord.gg/DYn29wFk9z)
 [![Demo](https://img.shields.io/badge/Demo-Hugging%20Face-yellow)](https://huggingface.co/spaces/lyh-917/OpenManusDemo)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15186407.svg)](https://doi.org/10.5281/zenodo.15186407)
@@ -25,7 +46,7 @@ We're also excited to introduce [OpenManus-RL](https://github.com/OpenManus/Open
 
 ## Project Demo
 
-<video src="https://private-user-images.githubusercontent.com/61239030/420168772-6dcfd0d2-9142-45d9-b74e-d10aa75073c6.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDEzMTgwNTksIm5iZiI6MTc0MTMxNzc1OSwicGF0aCI6Ii82MTIzOTAzMC80MjAxNjg3NzItNmRjZmQwZDItOTE0Mi00NWQ5LWI3NGUtZDEwYWE3NTA3M2M2Lm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAzMDclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMzA3VDAzMjIzOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTdiZjFkNjlmYWNjMmEzOTliM2Y3M2VlYjgyNDRlZDJmOWE3NWZhZjE1MzhiZWY4YmQ3NjdkNTYwYTU5ZDA2MzYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.UuHQCgWYkh0OQq9qsUWqGsUbhG3i9jcZDAMeHjLt5T4" data-canonical-src="https://private-user-images.githubusercontent.com/61239030/420168772-6dcfd0d2-9142-45d9-b74e-d10aa75073c6.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDEzMTgwNTksIm5iZiI6MTc0MTMxNzc1OSwicGF0aCI6Ii82MTIzOTAzMC80MjAxNjg3NzItNmRjZmQwZDItOTE0Mi00NWQ5LWI3NGUtZDEwYWE3NTA3M2M2Lm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAzMDclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMzA3VDAzMjIzOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTdiZjFkNjlmYWNjMmEzOTliM2Y3M2VlYjgyNDRlZDJmOWE3NWZhZjE1MzhiZWY4YmQ3NjdkNTYwYTU5ZDA2MzYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.UuHQCgWYkh0OQq9qsUWqGsUbhG3i9jcZDAMeHjLt5T4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px"></video>
+<video src="https://private-user-images.githubusercontent.com/61239030/420168772-6dcfd0d2-9142-45d9-b74e-d10aa75073c6.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px"></video>
 
 ## Installation
 
@@ -58,10 +79,13 @@ pip install -r requirements.txt
 1. Install uv (A fast Python package installer and resolver):
 
 For Linux or Mac:
+
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
- For Windows (According to ChatGPT):
+
+For Windows (According to ChatGPT):
+
 ```bash
 powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
@@ -89,6 +113,7 @@ uv pip install -r requirements.txt
 ```
 
 ### Browser Automation Tool (Optional)
+
 ```bash
 playwright install
 ```
@@ -106,37 +131,32 @@ cp config/config.example.toml config/config.toml
 2. Edit `config/config.toml` to add your API keys and customize settings:
 
 ```toml
-# Global LLM configuration
 [llm]
 model = "gpt-4o"
 base_url = "https://api.openai.com/v1"
-api_key = "sk-..."  # Replace with your actual API key
+api_key = "sk-..."
 max_tokens = 4096
 temperature = 0.0
 
-# Optional configuration for specific LLM models
 [llm.vision]
 model = "gpt-4o"
 base_url = "https://api.openai.com/v1"
-api_key = "sk-..."  # Replace with your actual API key
+api_key = "sk-..."
 ```
 
 ## Quick Start
-
-One line for run OpenManus:
 
 ```bash
 python main.py
 ```
 
-Then input your idea via terminal!
+For MCP tool version:
 
-For MCP tool version, you can run:
 ```bash
 python run_mcp.py
 ```
 
-For unstable multi-agent version, you also can run:
+For unstable multi-agent version:
 
 ```bash
 python run_flow.py
@@ -144,50 +164,35 @@ python run_flow.py
 
 ### Custom Adding Multiple Agents
 
-Currently, besides the general OpenManus Agent, we have also integrated the DataAnalysis Agent, which is suitable for data analysis and data visualization tasks. You can add this agent to `run_flow` in `config.toml`.
-
 ```toml
-# Optional configuration for run-flow
 [runflow]
-use_data_analysis_agent = true     # Disabled by default, change to true to activate
+use_data_analysis_agent = true
 ```
-In addition, you need to install the relevant dependencies to ensure the agent runs properly: [Detailed Installation Guide](app/tool/chart_visualization/README.md##Installation)
 
 ## How to contribute
 
-We welcome any friendly suggestions and helpful contributions! Just create issues or submit pull requests.
-
-Or contact @mannaandpoem via 📧email: mannaandpoem@gmail.com
-
-**Note**: Before submitting a pull request, please use the pre-commit tool to check your changes. Run `pre-commit run --all-files` to execute the checks.
+We welcome any friendly suggestions and contributions! Create issues or PRs.
 
 ## Community Group
-Join our networking group on Feishu and share your experience with other developers!
 
-<div align="center" style="display: flex; gap: 20px;">
-    <img src="assets/community_group.jpg" alt="OpenManus 交流群" width="300" />
+<div align="center">
+    <img src="assets/community_group.jpg" width="300" />
 </div>
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=FoundationAgents/OpenManus&type=Date)](https://star-history.com/#FoundationAgents/OpenManus&Date)
+![Star History Chart](https://api.star-history.com/svg?repos=FoundationAgents/OpenManus\&type=Date)
 
 ## Sponsors
-Thanks to [PPIO](https://ppinfra.com/user/register?invited_by=OCPKCN&utm_source=github_openmanus&utm_medium=github_readme&utm_campaign=link) for computing source support.
-> PPIO: The most affordable and easily-integrated MaaS and GPU cloud solution.
 
+Thanks to PPIO for computing support.
 
 ## Acknowledgement
 
-Thanks to [anthropic-computer-use](https://github.com/anthropics/anthropic-quickstarts/tree/main/computer-use-demo), [browser-use](https://github.com/browser-use/browser-use) and [crawl4ai](https://github.com/unclecode/crawl4ai) for providing basic support for this project!
-
-Additionally, we are grateful to [AAAJ](https://github.com/metauto-ai/agent-as-a-judge), [MetaGPT](https://github.com/geekan/MetaGPT), [OpenHands](https://github.com/All-Hands-AI/OpenHands) and [SWE-agent](https://github.com/SWE-agent/SWE-agent).
-
-We also thank stepfun(阶跃星辰) for supporting our Hugging Face demo space.
-
-OpenManus is built by contributors from MetaGPT. Huge thanks to this agent community!
+Thanks to anthropic-computer-use, browser-use, crawl4ai, AAAJ, MetaGPT, OpenHands, SWE-agent, and stepfun.
 
 ## Cite
+
 ```bibtex
 @misc{openmanus2025,
   author = {Xinbin Liang and Jinyu Xiang and Zhaoyang Yu and Jiayi Zhang and Sirui Hong and Sheng Fan and Xiao Tang},
