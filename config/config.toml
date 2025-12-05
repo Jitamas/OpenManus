@@ -1,6 +1,6 @@
 # Global LLM configuration
 [llm]
-model = "qwen/qwen3-vl-8b"                     # The LLM model to use
+model = "claude-3.7-sonnet-reasoning-gemma3-12b"                     # The LLM model to use
 base_url = "http://127.0.0.1:8000/v1"      # API endpoint URL
 api_key = "lmstudio"                       # Your API key
 max_tokens = 20000                          # Maximum number of tokens in the response
